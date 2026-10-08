@@ -15,9 +15,10 @@ public class Main {
                 String echoThis = input.split("echo ")[1];
                 System.out.println(echoThis);
                 break;
+            } else {
+                System.out.printf("%s: command not found\n", input);
             }
 
-            System.out.printf("%s: command not found\n", input);
         }
 
         System.exit(0);
