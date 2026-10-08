@@ -9,6 +9,10 @@ public class Main {
             System.out.print("$ ");
             String input = sc.nextLine();
             System.out.printf("%s: command not found\n", input);
+
+            if(input.equals("exit")) {
+                break;
+            }
          }
 
 //         System.exit(0);
