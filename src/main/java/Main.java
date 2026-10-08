@@ -29,6 +29,8 @@ public class Main {
                 String typeThis = input.split("type ")[1];
                 if (AVAILABLE_COMMANDS.contains(typeThis)) {
                     System.out.printf("%s is a shell builtin\n", typeThis);
+                } else {
+                    System.out.printf("%s: not found\n", typeThis);
                 }
             }
 
