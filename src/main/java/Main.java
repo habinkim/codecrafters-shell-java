@@ -12,7 +12,7 @@ public class Main {
             System.out.print("$ ");
             String input = sc.nextLine();
 
-            if (!AVAILABLE_COMMANDS.contains(input)) {
+            if (!AVAILABLE_COMMANDS.contains(input.split(" ")[0])) {
                 System.out.printf("%s: command not found\n", input);
             }
 
