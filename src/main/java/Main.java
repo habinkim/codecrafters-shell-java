@@ -1,7 +1,10 @@
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+
+        final List<String> AVAILABLE_COMMANDS = List.of("exit", "echo", "type");
 
         Scanner sc = new Scanner(System.in);
 
@@ -9,13 +12,24 @@ public class Main {
             System.out.print("$ ");
             String input = sc.nextLine();
 
+            if (!AVAILABLE_COMMANDS.contains(input)) {
+                System.out.printf("%s: command not found\n", input);
+            }
+
             if (input.equals("exit")) {
                 break;
-            } else if (input.startsWith("echo")) {
+            }
+
+            if (input.startsWith("echo")) {
                 String echoThis = input.split("echo ")[1];
                 System.out.println(echoThis);
-            } else {
-                System.out.printf("%s: command not found\n", input);
+            }
+
+            if (input.startsWith("type ")) {
+                String typeThis = input.split("type ")[1];
+                if (AVAILABLE_COMMANDS.contains(typeThis)) {
+                    System.out.printf("%s is a shell builtin\n", typeThis);
+                }
             }
 
         }
